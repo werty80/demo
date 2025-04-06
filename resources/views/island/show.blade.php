@@ -55,7 +55,6 @@
                 >Add Village</a>
             </div>
         </div>
-
     </div>
 
     <div class="overflow-hidden bg-white shadow sm:rounded-lg mt-2">

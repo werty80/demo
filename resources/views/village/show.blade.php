@@ -82,7 +82,7 @@
         </table>
 
         <div class="p-4">
-            {{ $employers->links() }}
+            {{ $houses->links() }}
         </div>
     </div>
 </x-layout>

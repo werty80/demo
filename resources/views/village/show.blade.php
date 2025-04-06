@@ -87,7 +87,7 @@
             @empty
                 <tr>
                     <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
-                        No employers found.
+                        No houses found.
                     </td>
                 </tr>
             @endforelse

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class House extends Model
 {
@@ -16,7 +17,7 @@ class House extends Model
     ];
 
     // Relation: House belongs to a village
-    public function village()
+    public function village(): BelongsTo
     {
         return $this->belongsTo(Village::class);
     }

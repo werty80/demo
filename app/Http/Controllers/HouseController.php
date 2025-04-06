@@ -35,6 +35,7 @@ class HouseController extends Controller
         ]);
 
         House::create($data);
+        return redirect()->route('houses.index');
     }
 
     /**

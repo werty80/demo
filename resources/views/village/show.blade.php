@@ -44,7 +44,7 @@
                </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-            @forelse ($houses as $house)
+            @forelse ($village->houses as $house)
                 <tr>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         {{ $house->name }}
@@ -80,9 +80,5 @@
             @endforelse
             </tbody>
         </table>
-
-        <div class="p-4">
-            {{ $houses->links() }}
-        </div>
     </div>
 </x-layout>

@@ -46,6 +46,7 @@ class VillageController extends Controller
      */
     public function show(Village $village)
     {
+        $village->load('houses');
         return view('village.show', ['village' => $village]);
 
     }

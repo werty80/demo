@@ -16,7 +16,7 @@ class Village extends Model
         'code',
         'island_id',
     ];
-    public function house()
+    public function houses()
     {
         return $this->hasMany(House::class);
     }

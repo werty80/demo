@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\House;
 use App\Models\Village;
+use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 
 class HouseController extends Controller
@@ -26,19 +27,13 @@ class HouseController extends Controller
          compact('villages'));
     }
 
-    public function store(Request $request)
+    public function store(Data $data)
     {
-        $request->validate([
-            'village_id' => 'required|exists:villages,id',
-            'name' => 'required|string|max:255',
+        $data = request()->validate([
+            'name' => ['required'],
         ]);
 
-        House::create([
-            'name' => $request->name,
-            'village_id' => $request->village_id,
-        ]);
-
-        return redirect()->route('houses.index')->with('success', 'House added successfully!');
+        House::create($data);
     }
 
     /**

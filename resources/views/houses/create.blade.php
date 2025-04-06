@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Create Job
+        Create House
     </x-slot:heading>
 
     <form method="POST" action="/houses">

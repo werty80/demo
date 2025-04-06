@@ -21,4 +21,10 @@ class Village extends Model
         return $this->hasMany(House::class);
     }
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

@@ -28,4 +28,60 @@
             </dl>
         </div>
     </div>
+    <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    House count
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    Actions
+                </th>
+            </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+            @forelse ($houses as $house)
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {{ $house->name }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {{ $house->jobs_count ?? 0 }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <a href="{{ route('$houses.show', $house->id) }}"
+                           class="text-indigo-600 hover:text-indigo-900">View</a> |
+                        <a href="{{ route('houses.edit', $house->id) }}"
+                           class="text-yellow-600 hover:text-yellow-900">Edit</a>
+                        @if ($house->jobs_count <= 0)
+                            |
+                            <form action="{{ route('houses.destroy', $house->id) }}" method="POST"
+                                  style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:text-red-900"
+                                        onclick="return confirm('Are you sure you want to delete this house?');">Delete
+                                </button>
+                            </form>
+                        @endif
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                        No employers found.
+                    </td>
+                </tr>
+            @endforelse
+            </tbody>
+        </table>
+
+        <div class="p-4">
+            {{ $employers->links() }}
+        </div>
+    </div>
 </x-layout>

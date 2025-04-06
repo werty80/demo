@@ -30,11 +30,11 @@
     </div>
 
     <hr class="bg-gray-500 my-5"/>
-    <div class="mt-5">
+    <div class="my-5">
         <div class="flex justify-between">
             <h3 class="text-lg font-medium leading-6 text-gray-900">Houses</h3>
             <div>
-                <a href="{{ route('houses.create', ['$house'=>$house->id]) }}"
+                <a href="{{ route('houses.create', ['village'=>$village->id]) }}"
                    class="rounded-md bg-green-500 px-3 py-1 text-sm font-semibold text-white shadow-xs hover:bg-green-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
                 >Add House</a>
             </div>

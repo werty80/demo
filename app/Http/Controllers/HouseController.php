@@ -31,6 +31,7 @@ class HouseController extends Controller
     {
         $data = request()->validate([
             'name' => ['required'],
+            'village_id' => ['required'],
         ]);
 
         House::create($data);

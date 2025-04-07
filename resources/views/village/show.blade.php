@@ -66,7 +66,7 @@
                         {{ $house->jobs_count ?? 0 }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <a href="{{ route('$houses.show', $house->id) }}"
+                        <a href="{{ route('houses.show', $house->id) }}"
                            class="text-indigo-600 hover:text-indigo-900">View</a> |
                         <a href="{{ route('houses.edit', $house->id) }}"
                            class="text-yellow-600 hover:text-yellow-900">Edit</a>

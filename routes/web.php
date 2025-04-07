@@ -21,6 +21,7 @@ Route::resource('contacts', ContactController::class);
 Route::resource('users', UserController::class);
 Route::resource('jobs', JobController::class);
 Route::resource('employers', EmployerController::class);
+Route::resource('houses', HouseController::class);
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);
@@ -31,4 +32,3 @@ Route::post('/logout', [SessionController::class, 'destroy']);
 
 Route::get('/contacts', [ContactController::class, 'index']);
 Route::get('/houses/create', [HouseController::class, 'create'])->name('houses.create');
-Route::post('/houses', [HouseController::class, 'store'])->name('houses.store');

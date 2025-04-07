@@ -21,9 +21,10 @@ class HouseController extends Controller
      */
     public function create()
     {
+        $selectedVillage = request('village');
         $villages = Village::all();
         return view('houses.create',
-         compact('villages'));
+         compact('villages', 'selectedVillage'));
     }
 
     public function store(Data $data)
@@ -35,7 +36,7 @@ class HouseController extends Controller
 
         House::create($data);
 
-        return redirect()->route('/islands');
+        return redirect()->to('/islands');
     }
 
     /**
@@ -43,6 +44,7 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
+
        return view('houses.show', ['house' => $house]);
     }
 

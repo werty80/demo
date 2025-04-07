@@ -30,12 +30,13 @@ class HouseController extends Controller
     public function store(Data $data)
     {
         $data = request()->validate([
-            'name' => ['required'],
-            'village_id' => ['required'],
+            'name' => 'required',
+            'village_id' => 'required',
         ]);
 
         House::create($data);
-        return redirect()->route('houses.index');
+
+        return redirect()->route('/islands');
     }
 
     /**
@@ -43,7 +44,7 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
-        //
+        return view('houses.show', ['house' => $house]);
     }
 
     /**
@@ -51,15 +52,25 @@ class HouseController extends Controller
      */
     public function edit(House $house)
     {
-        return view('houses.edit', compact('house'));
+        return view('houses.edit', ['house' => $house]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, House $house)
+    public function update( House $house)
     {
-        //
+        $data = request()->validate([
+            'name' => 'required',
+            'village_id' => 'required',
+        ]);
+
+        $house->update([
+            'name' => $data['name'],
+            'village_id' => $data['village_id'],
+        ]);
+
+        return redirect()->route('/houses');
     }
 
     /**
@@ -68,6 +79,7 @@ class HouseController extends Controller
     public function destroy(House $house)
     {
         $house->delete();
+
         return redirect()->route('houses.index');
     }
 }

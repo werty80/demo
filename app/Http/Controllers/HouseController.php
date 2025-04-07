@@ -36,7 +36,7 @@ class HouseController extends Controller
 
         House::create($data);
 
-        return redirect()->to('/islands');
+        return redirect()->route('villages.show', $data['village_id'])->with('success', 'House created successfully.');
     }
 
     /**

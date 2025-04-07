@@ -13,6 +13,7 @@ class House extends Model
     protected $fillable = [
         'village_id',
         'name',
+        'house_number',
 
     ];
 

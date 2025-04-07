@@ -9,8 +9,6 @@ class IslandController extends controller
 {
     public function index()
     {
-        $islands = Island::latest()->paginate(5);
-
         return view('island.index', [
             'islands' => Island::withCount('villages')->paginate(),
         ]);

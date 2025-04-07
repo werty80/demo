@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->string('island_id')->integer('0')->nullable();
+            $table->foreignIdFor(\App\Models\Island::class);
         });
     }
 

@@ -3,6 +3,13 @@
         Island List
     </x-slot:heading>
 
+    <x-slot:action>
+        <a href="{{ route('islands.create') }}"
+           class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Create Island
+        </a>
+    </x-slot:action>
+
     <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">

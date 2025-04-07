@@ -12,7 +12,7 @@ class AddHouseNumberToHousesTable extends Migration
     public function up(): void
     {
         Schema::table('houses', function (Blueprint $table) {
-            $table->string('house_number')->after('name')->nullable(); // Add house_number column
+            $table->string('house_number')->unique()->after('name')->nullable(); // Add house_number column
         });
     }
 

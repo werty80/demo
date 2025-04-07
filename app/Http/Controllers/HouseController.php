@@ -30,7 +30,7 @@ class HouseController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'village_id' => 'required',
+            'village_id' => 'required|exists:villages,id',
         ]);
 
         House::create($data);
@@ -61,7 +61,7 @@ class HouseController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'village_id' => 'required|exists:villages,id',
+            'village_id' => 'required',
 
         ]);
 

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\House;
 use App\Models\Village;
 use Dflydev\DotAccessData\Data;
-use Illuminate\Http\Request;
 
 class HouseController extends Controller
 {
@@ -44,7 +43,7 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
-        return view('houses.show', ['house' => $house]);
+       return view('houses.show', ['house' => $house]);
     }
 
     /**

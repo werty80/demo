@@ -62,7 +62,8 @@ class HouseController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'village_id' => 'required',
+            'village_id' => 'required|exists:villages,id',
+
         ]);
 
         $house->update([

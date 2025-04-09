@@ -63,7 +63,7 @@
                         {{ $house->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{ $house->jobs_count ?? 0 }}
+                        {{ $house->house_count ?? 0 }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <a href="{{ route('houses.show', $house->id) }}"

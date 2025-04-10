@@ -5,6 +5,7 @@ use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\HouseController;
 use App\Http\Controllers\IslandController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\PeopleController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
@@ -22,6 +23,7 @@ Route::resource('users', UserController::class);
 Route::resource('jobs', JobController::class);
 Route::resource('employers', EmployerController::class);
 Route::resource('houses', HouseController::class);
+Route::resource('peoples', PeopleController::class);
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
 Route::post('/register', [RegisteredUserController::class, 'store']);

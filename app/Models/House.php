@@ -17,9 +17,13 @@ class House extends Model
 
     ];
 
-    // Relation: House belongs to a village
     public function village(): belongsTo
     {
         return $this->belongsTo(Village::class);
     }
+    public function people(): belongsTo
+    {
+        return $this->belongsTo(People::class);
+    }
+
 }

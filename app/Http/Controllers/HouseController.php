@@ -82,6 +82,6 @@ class HouseController extends Controller
     {
         $house->delete();
 
-        return redirect()->route('houses.index');
+        return back();
     }
 }

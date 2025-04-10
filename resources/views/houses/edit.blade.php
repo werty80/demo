@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Edit Island: {{ $house->name }}
+        Edit House: {{ $house->name }}
     </x-slot:heading>
 
     <form method="POST" action="/houses/{{ $house->id }}">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="flex items-center gap-x-6">
-                    <a href="/islands/{{ $house->id }}"
+                    <a href="/villages/{{ $house->id=2 }}"
                        class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Cancel</a>
                     <div>

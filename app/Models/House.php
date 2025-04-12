@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class House extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+
     protected $fillable = [
         'village_id',
         'name',
@@ -21,9 +21,9 @@ class House extends Model
     {
         return $this->belongsTo(Village::class);
     }
-    public function people(): belongsTo
+    public function peoples()
     {
-        return $this->belongsTo(People::class);
+        return $this->hasMany(People::class);
     }
 
 }

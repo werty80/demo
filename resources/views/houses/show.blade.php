@@ -36,4 +36,56 @@
             </dl>
         </div>
     </div>
+
+    <hr class="bg-gray-500 my-5"/>
+    <div class="my-5">
+        <div class="flex justify-between">
+            <h3 class="text-lg font-medium leading-6 text-gray-900">Peoples</h3>
+            <div>
+                <a href="{{ route('peoples.create', ['house'=>$house->id]) }}"
+                   class="rounded-md bg-green-500 px-3 py-1 text-sm font-semibold text-white shadow-xs hover:bg-green-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
+                >Add Person</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="overflow-hidden bg-white shadow sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    House count
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
+                    Actions
+                </th>
+            </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+            @forelse ($house->peoples as $person)
+                <tr>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        {{ $person->name }}
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                       -
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                       -
+                    </td>
+                </tr>
+            @empty
+                <tr>
+                    <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
+                        No houses found.
+                    </td>
+                </tr>
+            @endforelse
+            </tbody>
+        </table>
+    </div>
+
 </x-layout>

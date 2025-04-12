@@ -14,8 +14,9 @@ class PeopleController extends Controller
 
     public function create()
     {
-
-
+        $selectedPeople = request('people');
+        $people = People::all();
+        return view('people.create', compact('people', 'selectedPeople'));
     }
 
     public function store(Data $data)

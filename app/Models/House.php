@@ -23,7 +23,7 @@ class House extends Model
     }
     public function peoples()
     {
-        return $this->hasMany(People::class);
+        return $this->hasMany(Peoples::class);
     }
 
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Island;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->foreignIdFor(\App\Models\Island::class);
+            $table->foreignIdFor(Island::class);
         });
     }
 

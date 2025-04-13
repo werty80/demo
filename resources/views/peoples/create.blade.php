@@ -18,7 +18,7 @@
                                        id="name"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                                        placeholder="Shift Leader"
-                                       value="{{ $people->name }}"
+                                       value="{{ $peoples->name }}"
                                        required>
                             </div>
                             @error('name')
@@ -37,7 +37,7 @@
                                        name="email"
                                        id="email"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->code }}"
+                                       value="{{ $peoples->email }}"
                                        required>
                             </div>
                             @error('email')
@@ -56,7 +56,7 @@
                                        name="phone"
                                        id="phone"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->phone }}"
+                                       value="{{ $peoples->phone }}"
                                        required>
                             </div>
                             @error('phone')
@@ -75,7 +75,7 @@
                                        name="gender"
                                        id="gender"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->gender }}"
+                                       value="{{ $peoples->gender }}"
                                        required>
                             </div>
                             @error('gender')
@@ -94,7 +94,7 @@
                                        name="date_of_birth"
                                        id="date_of_birth"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->date_of_birth }}"
+                                       value="{{ $peoples->date_of_birth }}"
                                        required>
                             </div>
                             @error('date_of_birth')
@@ -113,7 +113,7 @@
                                        name="address"
                                        id="address"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->address }}"
+                                       value="{{ $peoples->address }}"
                                        required>
                             </div>
                             @error('address')
@@ -132,7 +132,7 @@
                                        name="nationality"
                                        id="nationality"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->nationality }}"
+                                       value="{{ $peoples->nationality }}"
                                        required>
                             </div>
                             @error('nationality')
@@ -151,7 +151,7 @@
                                        name="status"
                                        id="status"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->status }}"
+                                       value="{{ $peoples->status }}"
                                        required>
                             </div>
                             @error('status')

@@ -12,17 +12,16 @@ class PeoplesController extends Controller
         return view('peoples.index');
     }
 
-    public function create()
+    public function create(Peoples $people)
     {
-        $selectedPeoples = request('peoples');
-        $peoples = Peoples::all();
-        return view('peoples.create', compact('peoples', 'selectedPeoples'));
+        return view('peoples.create', ['people' => $people]);
     }
 
     public function store(Data $data)
     {
         $data = request()->validate([
             'name' => 'required',
+            'house_id' => 'required',
             'email' => 'required|email',
             'phone' => 'required|min:10',
             'gender' => 'required|in:male,female',
@@ -48,6 +47,7 @@ class PeoplesController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
+            'house_id' => 'required',
             'email' => 'required|email',
             'phone' => 'required|min:10',
             'gender' => 'required|in:male,female',
@@ -59,6 +59,7 @@ class PeoplesController extends Controller
 
         $people->update([
             'name' => $data['name'],
+            'house_id' => $data['house_id'],
             'email' => $data['email'],
             'phone' => $data['phone'],
             'gender' => $data['gender'],

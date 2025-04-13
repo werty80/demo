@@ -17,10 +17,29 @@
                                        name="name"
                                        id="name"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->name }}"
+                                       value="{{ $people->name }}"
                                        required>
                             </div>
                             @error('name')
+                            <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-4">
+                        <label for="house_id" class="block text-sm/6 font-medium text-gray-900">House Id</label>
+                        <div class="mt-2">
+                            <div
+                                class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                                <input type="text"
+                                       name="house_id"
+                                       id="house_id"
+                                       class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                       value="{{ $people->house_id }}"
+                                       required>
+                            </div>
+                            @error('house_id')
                             <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
                             @enderror
                         </div>
@@ -36,7 +55,7 @@
                                        name="email"
                                        id="email"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->email }}"
+                                       value="{{ $people->email }}"
                                        required>
                             </div>
                             @error('email')
@@ -55,7 +74,7 @@
                                        name="phone"
                                        id="phone"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->phone }}"
+                                       value="{{ $people->phone }}"
                                        required>
                             </div>
                             @error('phone')
@@ -74,7 +93,7 @@
                                        name="gender"
                                        id="gender"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->gender }}"
+                                       value="{{ $people->gender }}"
                                        required>
                             </div>
                             @error('gender')
@@ -85,15 +104,14 @@
                 </div>
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <label for="date_of_birth" class="block text-sm/6 font-medium text-gray-900">Date of
-                            Birth</label>
+                        <label for="date_of_birth" class="block text-sm/6 font-medium text-gray-900">Date of Birth</label>
                         <div class="mt-2">
                             <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                                 <input type="text"
                                        name="date_of_birth"
                                        id="date_of_birth"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->date_of_birth }}"
+                                       value="{{ $people->date_of_birth }}"
                                        required
                                 >
                             </div>
@@ -113,7 +131,7 @@
                                        name="address"
                                        id="address"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->address }}"
+                                       value="{{ $people->address }}"
                                        required>
                             </div>
                             @error('address')
@@ -132,7 +150,7 @@
                                        name="nationality"
                                        id="nationality"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->nationality }}"
+                                       value="{{ $people->nationality }}"
                                        required>
                             </div>
                             @error('nationality')
@@ -151,7 +169,7 @@
                                        name="status"
                                        id="status"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $peoples->status }}"
+                                       value="{{ $people->status }}"
                                        required>
                             </div>
                             @error('status')

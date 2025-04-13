@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Edit Island: {{ $people->name }}
+        Edit Person: {{ $people->name }}
     </x-slot:heading>
 
 
@@ -45,7 +45,7 @@
                                        name="email"
                                        id="email"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       value="{{ $people->code }}"
+                                       value="{{ $people->email }}"
                                        required>
                             </div>
                             @error('email')

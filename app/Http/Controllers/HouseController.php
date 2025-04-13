@@ -44,6 +44,7 @@ class HouseController extends Controller
      */
     public function show(House $house)
     {
+        $house->load('peoples');
 
        return view('houses.show', ['house' => $house]);
     }

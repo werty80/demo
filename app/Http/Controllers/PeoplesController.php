@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peoples;
+use App\Models\People;
 use Dflydev\DotAccessData\Data;
 
 class PeoplesController extends Controller
@@ -12,7 +12,7 @@ class PeoplesController extends Controller
         return view('peoples.index');
     }
 
-    public function create(Peoples $people)
+    public function create(People $people)
     {
         return view('peoples.create', ['people' => $people]);
     }
@@ -31,19 +31,19 @@ class PeoplesController extends Controller
             'status' => 'required|in:single,married,divorced'
         ]);
 
-        Peoples::create($data);
+        People::create($data);
 
         return redirect('/peoples');
     }
-    public function show(Peoples $people)
+    public function show(People $people)
     {
         return view('peoples.show', ['people' => $people]);
     }
-    public function edit(Peoples $people)
+    public function edit(People $people)
     {
         return view('peoples.edit', ['people' => $people]);
     }
-    public function update(Peoples $people)
+    public function update(People $people)
     {
         $data = request()->validate([
             'name' => 'required',
@@ -71,7 +71,7 @@ class PeoplesController extends Controller
 
         return redirect('/peoples');
     }
-    public function destroy(Peoples $people)
+    public function destroy(People $people)
     {
         $people->delete();
 

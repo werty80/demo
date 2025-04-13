@@ -47,6 +47,25 @@
                 </div>
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
+                        <label for="id_number" class="block text-sm/6 font-medium text-gray-900">Id Number</label>
+                        <div class="mt-2">
+                            <div
+                                class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                                <input type="text"
+                                       name="id_number"
+                                       id="id_number"
+                                       class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                                       value="{{ $people->id_number }}"
+                                       required>
+                            </div>
+                            @error('id_number')
+                            <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-4">
                         <label for="email" class="block text-sm/6 font-medium text-gray-900">Email</label>
                         <div class="mt-2">
                             <div

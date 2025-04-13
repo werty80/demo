@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Peoples extends Model
+class People extends Model
 {
-    protected $guarded = [];
+
+    protected $table = 'peoples';
 
     protected $fillable =[
         'name',
         'house_id',
+        'id_number',
         'email',
         'phone',
         'gender',

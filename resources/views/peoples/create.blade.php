@@ -17,7 +17,6 @@
                                        name="name"
                                        id="name"
                                        class="block min-w-0 grow py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                                       placeholder="Shift Leader"
                                        value="{{ $peoples->name }}"
                                        required>
                             </div>

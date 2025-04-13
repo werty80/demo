@@ -11,6 +11,7 @@ class Peoples extends Model
 
     protected $fillable =[
         'name',
+        'house_id',
         'email',
         'phone',
         'gender',

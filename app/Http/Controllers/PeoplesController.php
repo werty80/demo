@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Peoples;
 use Dflydev\DotAccessData\Data;
 
-class PeopleController extends Controller
+class PeoplesController extends Controller
 {
     public function index()
     {
-        return view('people.index');
+        return view('peoples.index');
     }
 
     public function create()
     {
         $selectedPeople = request('people');
         $people = Peoples::all();
-        return view('people.create', compact('people', 'selectedPeople'));
+        return view('peoples.create', compact('people', 'selectedPeople'));
     }
 
     public function store(Data $data)
@@ -34,15 +34,15 @@ class PeopleController extends Controller
 
         Peoples::create($data);
 
-        return redirect('/people');
+        return redirect('/peoples');
     }
     public function show(Peoples $people)
     {
-        return view('people.show', ['people' => $people]);
+        return view('peoples.show', ['people' => $people]);
     }
     public function edit(Peoples $people)
     {
-        return view('people.edit', ['people' => $people]);
+        return view('peoples.edit', ['people' => $people]);
     }
     public function update(Peoples $people)
     {
@@ -68,7 +68,7 @@ class PeopleController extends Controller
             'status' => $data['status'],
         ]);
 
-        return redirect('/people');
+        return redirect('/peoples');
     }
     public function destroy(Peoples $people)
     {

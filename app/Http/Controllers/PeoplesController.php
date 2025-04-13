@@ -22,6 +22,7 @@ class PeoplesController extends Controller
         $data = request()->validate([
             'name' => 'required',
             'house_id' => 'required',
+            'id_number' => 'required',
             'email' => 'required|email',
             'phone' => 'required|min:10',
             'gender' => 'required|in:male,female',
@@ -33,7 +34,7 @@ class PeoplesController extends Controller
 
         People::create($data);
 
-        return redirect('/peoples');
+        return redirect('/peoples.show');
     }
     public function show(People $people)
     {

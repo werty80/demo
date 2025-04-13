@@ -34,7 +34,7 @@ class PeoplesController extends Controller
 
         People::create($data);
 
-        return redirect('/peoples.show');
+        return back();
     }
     public function show(People $people)
     {

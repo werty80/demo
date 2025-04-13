@@ -71,16 +71,31 @@
                         {{ $person->name }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                       -
+                        {{ $person->person_count ?? 0 }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                       -
+                        <a href="{{ route('peoples.show', $person->id) }}"
+                           class="text-indigo-600 hover:text-indigo-900">View</a> |
+                        <a href="{{ route('peoples.edit', $person->id) }}"
+                           class="text-yellow-600 hover:text-yellow-900">Edit</a>
+                        @if ($person->person_count <= 0)
+                            |
+                            <form action="{{ route('peoples.destroy', $person->id) }}" method="POST"
+                                  style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-600 hover:text-red-900"
+                                        onclick="return confirm('Are you sure you want to delete this person?');">
+                                    Delete
+                                </button>
+                            </form>
+                        @endif
                     </td>
                 </tr>
             @empty
                 <tr>
                     <td colspan="4" class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">
-                        No houses found.
+                        No person found.
                     </td>
                 </tr>
             @endforelse

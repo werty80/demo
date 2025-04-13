@@ -7,7 +7,7 @@
         <div>
             <a href="/islands"
                class="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
-            >Islands</a>
+            >House</a>
             <a href="{{ route('houses.edit', $house->id) }}"
                class="rounded-md bg-yellow-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-yellow-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
             >Edit House Info</a>

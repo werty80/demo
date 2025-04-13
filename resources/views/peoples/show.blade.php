@@ -5,7 +5,7 @@
 
     <x-slot:action>
         <div>
-            <a href="/peoples"
+            <a href="javascript:history.back()"
                class="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500"
             >Peoples</a>
             <a href="{{ route('peoples.edit', $people->id) }}"

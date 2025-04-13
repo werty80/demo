@@ -57,7 +57,7 @@
                     Name
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
-                    House count
+                    Person count
                 </th>
                 <th scope="col" class="px-6 py-3 text-left text-sm font-medium text-gray-500 uppercase tracking-wider">
                     Actions
@@ -102,5 +102,4 @@
             </tbody>
         </table>
     </div>
-
 </x-layout>

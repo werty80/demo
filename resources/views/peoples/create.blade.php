@@ -86,7 +86,8 @@
                 </div>
                 <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                     <div class="sm:col-span-4">
-                        <label for="date_of_birth" class="block text-sm/6 font-medium text-gray-900">Date of Birth</label>
+                        <label for="date_of_birth" class="block text-sm/6 font-medium text-gray-900">Date of
+                            Birth</label>
                         <div class="mt-2">
                             <div
                                 class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">

@@ -36,14 +36,17 @@ class PeoplesController extends Controller
 
         return redirect('/peoples');
     }
+
     public function show(People $people)
     {
         return view('peoples.show', ['people' => $people]);
     }
+
     public function edit(People $people)
     {
         return view('peoples.edit', ['people' => $people]);
     }
+
     public function update(People $people)
     {
         $data = request()->validate([
@@ -72,6 +75,7 @@ class PeoplesController extends Controller
 
         return redirect('/peoples');
     }
+
     public function destroy(People $people)
     {
         $people->delete();

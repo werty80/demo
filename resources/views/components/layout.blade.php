@@ -16,7 +16,7 @@
                 <div class="flex items-center">
                     <div class="shrink-0">
                         <img class="h-8 w-8" src="https://laracasts.com/images/logo/logo-tringle.svg"
-                             alt="PUBG">
+                             alt="php">
                     </div>
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">

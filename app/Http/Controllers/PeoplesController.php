@@ -32,9 +32,10 @@ class PeoplesController extends Controller
             'status' => 'required|in:single,married,divorced'
         ]);
 
-        People::create($data);
+        $people = People::create($data);
 
-        return redirect('/peoples');
+        return redirect()->route('peoples.show', $people->id);
+
     }
 
     public function show(People $people)
@@ -73,7 +74,10 @@ class PeoplesController extends Controller
             'status' => $data['status'],
         ]);
 
-        return redirect('/peoples');
+        $people->update($data);
+
+        return redirect()->route('peoples.show', $people->id);
+
     }
 
     public function destroy(People $people)

@@ -1,6 +1,5 @@
 <form action="{{ route('houses.store') }}" method="POST">
     @csrf
-
     <div>
         <label for="village">Select Village:</label>
         <select name="village_id" id="village" required>

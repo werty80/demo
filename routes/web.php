@@ -13,10 +13,8 @@ use App\Http\Controllers\VillageController;
 //use App\Models\Island;
 use Illuminate\Support\Facades\Route;
 
-
 Route::view('/', 'home');
 Route::view('learn more', 'learn more');
-
 
 Route::prefix('islands')->group(function () {
     Route::get('{island}/villages', [IslandController::class, 'show']);

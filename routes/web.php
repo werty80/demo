@@ -31,7 +31,7 @@ Route::prefix('islands')->group(function () {
 
 Route::get('islands/{island_id}/villages/{village_id}/houses/{house_id}/peoples/{person_id}',
     [PeoplesController::class, 'show']
-)->name('people.show');
+)->name('peoples.show');
 
 Route::resource('islands', IslandController::class);
 Route::resource('villages', VillageController::class);

@@ -25,7 +25,9 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-gray-100 p-4 rounded shadow">
-            <h2 class="text-lg font-bold mb-2">Island Information</h2>
+            <a href="{{ route('islands.show', $island->id) }}" class="text-indigo-600 hover:text-indigo-900">
+                <h2 class="text-lg font-bold mb-2">Island Information</h2>
+            </a>
             <p class="text-gray-600">
             <div>
                 <dt class="text-sm font-medium text-gray-500">Name</dt>
@@ -42,7 +44,9 @@
         </div>
 
         <div class="bg-gray-100 p-4 rounded shadow">
-            <h2 class="text-lg font-bold mb-2">Village Information</h2>
+            <a href="{{ route('villages.show', $village->id) }}" class="text-indigo-600 hover:text-indigo-900">
+                <h2 class="text-lg font-bold mb-2">Village Information</h2>
+            </a>
             <p class="text-gray-600">
             <div>
                 <dt class="text-sm font-medium text-gray-500">Name</dt>
@@ -55,7 +59,7 @@
         </div>
 
         <div class="bg-gray-100 p-4 rounded shadow">
-            <h2 class="text-lg font-bold mb-2">House Information</h2>
+            <h2 class="text-indigo-600 text-lg font-bold mb-2">House Information</h2>
             <p class="text-gray-600">
             <div>
                 <dt class="text-sm font-medium text-gray-500">Name</dt>

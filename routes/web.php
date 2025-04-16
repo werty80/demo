@@ -10,7 +10,7 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VillageController;
-use App\Models\Island;
+//use App\Models\Island;
 use Illuminate\Support\Facades\Route;
 
 
@@ -23,9 +23,11 @@ Route::prefix('islands')->group(function () {
 
 });
 
-//Route::get('islands/{island}/villages/{village}/houses/{house}', function () {
-//   return 'show house details page';
-//});
+Route::prefix('islands')->group(function () {
+    Route::get('{island}/villages', [IslandController::class, 'show']);
+    Route::get('{island}/villages/{village}/houses/{house}', [HouseController::class, 'show'])
+        ->name('houses.details');
+});
 ////Route::get('islands/{island}/villages/{village}/houses/{house}/peoples/{people}', function () {
 //   return 'show people details page';
 //});

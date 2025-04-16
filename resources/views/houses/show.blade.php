@@ -23,17 +23,44 @@
         </div>
     </x-slot:action>
 
-    <div class="overflow-hidden bg-white shadow sm:rounded-lg">
-        <div class="px-4 py-5 sm:px-6">
-            <h3 class="text-lg font-medium leading-6 text-gray-900">House Information</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Island Information</h2>
+            <p class="text-gray-600">
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Name</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $island->name }}</dd>
+            </div>
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Code</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $island->code }}</dd>
+            </div>
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Country</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $island->country ?? '-' }}</dd>
+            </div>
         </div>
-        <div class="border-t border-gray-200 px-4 py-5 sm:p-6">
-            <dl class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-                <div>
-                    <dt class="text-sm font-medium text-gray-500">Name</dt>
-                    <dd class="mt-1 text-sm text-gray-900">{{ $house->name }}</dd>
-                </div>
-            </dl>
+
+        <div class="bg-gray-100 p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">Village Information</h2>
+            <p class="text-gray-600">
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Name</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $village->name }}</dd>
+            </div>
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Code</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $village->code }}</dd>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-4 rounded shadow">
+            <h2 class="text-lg font-bold mb-2">House Information</h2>
+            <p class="text-gray-600">
+            <div>
+                <dt class="text-sm font-medium text-gray-500">Name</dt>
+                <dd class="mt-1 text-sm text-gray-900">{{ $house->name }}</dd>
+            </div>
         </div>
     </div>
 

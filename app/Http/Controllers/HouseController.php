@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\House;
+use App\Models\Island;
 use App\Models\Village;
 use Dflydev\DotAccessData\Data;
 
@@ -42,11 +43,12 @@ class HouseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(House $house)
+    public function show(Island $island, Village $village, House $house )
     {
         $house->load('peoples');
 
-       return view('houses.show', ['house' => $house]);
+            return view('houses.show', compact('house', 'island', 'village')
+        );
     }
 
     /**

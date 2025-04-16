@@ -28,9 +28,11 @@ Route::prefix('islands')->group(function () {
     Route::get('{island}/villages/{village}/houses/{house}', [HouseController::class, 'show'])
         ->name('houses.details');
 });
-////Route::get('islands/{island}/villages/{village}/houses/{house}/peoples/{people}', function () {
-//   return 'show people details page';
-//});
+
+Route::get('islands/{island_id}/villages/{village_id}/houses/{house_id}/peoples/{person_id}',
+    [PeoplesController::class, 'show']
+)->name('people.show');
+
 Route::resource('islands', IslandController::class);
 Route::resource('villages', VillageController::class);
 Route::resource('contacts', ContactController::class);

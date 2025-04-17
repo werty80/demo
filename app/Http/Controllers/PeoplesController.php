@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\House;
+use App\Models\Island;
 use App\Models\People;
+use App\Models\Village;
 use Dflydev\DotAccessData\Data;
 
 class PeoplesController extends Controller
@@ -38,9 +41,22 @@ class PeoplesController extends Controller
 
     }
 
-    public function show(People $people)
+    public function show(Island $island, Village $village, House $house, People $people)
     {
-        return view('peoples.show', ['people' => $people]);
+        return view('peoples.show', [
+            'breadcrumb' => [
+                ['label' => 'Home', 'url' => '/'],
+                ['label' => 'Islands', 'url' => route('islands.index')],
+                ['label' => $island->name, 'url' => route('islands.show', $island->id)],
+                ['label' => $village->name, 'url' => route('villages.show', [$island->id, $village->id])],
+                ['label' => $house->name, 'url' => route('houses.details', [$island->id, $village->id, $house->id])],
+                ['label' => $people->name, 'url' => route('peoples.show', [$island->id, $village->id, $house->id, $people->id])],
+            ],
+            'island' => $island,
+            'village' => $village,
+            'house' => $house,
+            'people' => $people
+        ]);
     }
 
     public function edit(People $people)

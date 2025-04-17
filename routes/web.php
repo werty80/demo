@@ -22,9 +22,34 @@ Route::prefix('islands')->group(function () {
 });
 
 Route::prefix('islands')->group(function () {
-    Route::get('{island}/villages', [IslandController::class, 'show']);
-    Route::get('{island}/villages/{village}/houses/{house}', [HouseController::class, 'show'])
-    ->name('houses.show');
+
+    //Villages
+    Route::prefix('{island}/villages')->group(function () {
+        //listing all villages for given island
+        Route::get('/', [IslandController::class, 'show'])
+            ->name('villages.list');
+        //Show village TODO::bind route argument in VillageController show() method
+        Route::get('{village}', [VillageController::class, 'show'])
+            ->name('villages.details');
+
+    });
+
+
+    Route::prefix('{island}/villages/{village}/houses')->group(function () {
+        //Listing hosues
+        Route::get('/', function () {
+            return 'house list connect to controller here';
+        })->name('houses.list');
+
+        //house details
+        Route::get('{house}', [HouseController::class, 'show'])
+            ->name('houses.details');
+    });
+
+
+
+    Route::get('{island}/villages/{village}/houses/{house}/peoples/{people}', [PeoplesController::class, 'show'])
+        ->name('peoples.details');
 });
 
 Route::get('islands/{island_id}/villages/{village_id}/houses/{house_id}/peoples/{person_id}',

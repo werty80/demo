@@ -28,7 +28,7 @@ Route::prefix('islands')->group(function () {
         //listing all villages for given island
         Route::get('/', [IslandController::class, 'show'])
             ->name('villages.list');
-        //Show village TODO::bind route argument in VillageController show() method
+        //Show village
         Route::get('{village}', [VillageController::class, 'show'])
             ->name('villages.details');
     });

@@ -31,12 +31,10 @@ Route::prefix('islands')->group(function () {
         //Show village TODO::bind route argument in VillageController show() method
         Route::get('{village}', [VillageController::class, 'show'])
             ->name('villages.details');
-
     });
 
-
     Route::prefix('{island}/villages/{village}/houses')->group(function () {
-        //Listing hosues
+        //Listing houses
         Route::get('/', function () {
             return 'house list connect to controller here';
         })->name('houses.list');
@@ -45,8 +43,6 @@ Route::prefix('islands')->group(function () {
         Route::get('{house}', [HouseController::class, 'show'])
             ->name('houses.details');
     });
-
-
 
     Route::get('{island}/villages/{village}/houses/{house}/peoples/{people}', [PeoplesController::class, 'show'])
         ->name('peoples.details');

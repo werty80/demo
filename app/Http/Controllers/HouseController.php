@@ -48,6 +48,13 @@ class HouseController extends Controller
         $house->load('peoples');
 
         return view('houses.show', [
+            'breadcrumb' => [
+                ['label' => 'Home', 'url' => '/'],
+                ['label' => 'Islands', 'url' => route('islands.index')],
+                ['label' => $island->name, 'url' => route('islands.show', $island->id)],
+                ['label' => $village->name, 'url' => route('villages.details', [$island->id, $village->id])],
+                ['label' => $house->name, 'url' => route('houses.details', [$island->id, $village->id, $house->id])],
+            ],
             'island' => $island,
             'village' => $village,
             'house' => $house,

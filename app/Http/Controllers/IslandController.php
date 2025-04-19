@@ -18,7 +18,13 @@ class IslandController extends controller
     {
         $island->load('villages');
 
-        return view('island.show', ['island' => $island]);
+        return view('island.show', [
+            'breadcrumb' => [
+                ['label' => 'Home', 'url' => '/'],
+                ['label' => 'Islands', 'url' => route('islands.index')],
+                ['label' => $island->name, 'url' => route('islands.show', $island->id)],
+            ],
+            'island' => $island]);
     }
     public function create()
     {

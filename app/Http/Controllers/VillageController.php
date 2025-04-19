@@ -37,6 +37,12 @@ class VillageController extends Controller
         $village->load('houses');
 
         return view('village.show', [
+            'breadcrumb' => [
+                ['label' => 'Home', 'url' => '/'],
+                ['label' => 'Islands', 'url' => route('islands.index')],
+                ['label' => $island->name, 'url' => route('islands.show', $island->id)],
+                ['label' => $village->name, 'url' => route('villages.details', [$island->id, $village->id])],
+            ],
             'island' => $island,
             'village' => $village,
         ]);

@@ -22,7 +22,7 @@
             </form>
         </div>
     </x-slot:action>
-
+    <x-breadcrumb :items="$breadcrumb"/>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-gray-100 p-4 rounded shadow">
             <a href="{{ route('islands.show', $island->id) }}" class="text-indigo-600 hover:text-indigo-900">
@@ -105,7 +105,7 @@
                        0
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <a href="{{ route('peoples.show', $person->id) }}"
+                        <a href="{{ route('peoples.details',['island' => $island->id, 'village' => $village->id, 'house' => $house->id, 'people' => $person->id]) }}"
                            class="text-indigo-600 hover:text-indigo-900">View</a> |
                         <a href="{{ route('peoples.edit', $person->id) }}"
                            class="text-yellow-600 hover:text-yellow-900">Edit</a>

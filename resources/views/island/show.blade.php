@@ -22,7 +22,7 @@
             </form>
         </div>
     </x-slot:action>
-
+    <x-breadcrumb :items="$breadcrumb"/>
     <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
             <h3 class="text-lg font-medium leading-6 text-gray-900">Island Information</h3>
@@ -82,7 +82,7 @@
                         {{ $village->code }}
                     </td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <a href="{{ route('villages.show', $village->id) }}"
+                        <a href="{{ route('villages.details', [$village->island_id,$village->id]) }}"
                            class="text-indigo-600 hover:text-indigo-900">View</a> |
                         <a href="{{ route('villages.edit', $village->id) }}"
                            class="text-yellow-600 hover:text-yellow-900">Edit</a> |

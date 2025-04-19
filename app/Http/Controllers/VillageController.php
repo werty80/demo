@@ -34,15 +34,13 @@ class VillageController extends Controller
         return redirect()->route('islands.show', $data['island_id']);
     }
 
-    public function show(Island $island, Village $village, House $house, People $people)
+    public function show(Island $island, Village $village)
     {
         $village->load('houses');
 
         return view('village.show', [
             'island' => $island,
             'village' => $village,
-            'house' => $house,
-            'people' => $people,
         ]);
 
     }

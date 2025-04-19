@@ -48,7 +48,7 @@ class PeoplesController extends Controller
                 ['label' => 'Home', 'url' => '/'],
                 ['label' => 'Islands', 'url' => route('islands.index')],
                 ['label' => $island->name, 'url' => route('islands.show', $island->id)],
-                ['label' => $village->name, 'url' => route('villages.show', [$island->id, $village->id])],
+                ['label' => $village->name, 'url' => route('villages.details', [$island->id, $village->id])],
                 ['label' => $house->name, 'url' => route('houses.details', [$island->id, $village->id, $house->id])],
                 ['label' => $people->name, 'url' => route('peoples.show', [$island->id, $village->id, $house->id, $people->id])],
             ],

@@ -47,8 +47,11 @@ class HouseController extends Controller
     {
         $house->load('peoples');
 
-            return view('houses.show', compact('house', 'island', 'village')
-        );
+        return view('houses.show', [
+            'island' => $island,
+            'village' => $village,
+            'house' => $house,
+        ]);
     }
 
     /**

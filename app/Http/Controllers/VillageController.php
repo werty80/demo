@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\House;
 use App\Models\Island;
-use App\Models\People;
 use App\Models\Village;
 use Dflydev\DotAccessData\Data;
 

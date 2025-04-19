@@ -1,6 +1,6 @@
 @props(['items'])
 
-<nav class="breadcrumb py-3 px-4 bg-gray-50 rounded-md shadow-sm" aria-label="breadcrumb">
+<nav class="breadcrumb py-3 px-4 mb-5 bg-gray-50 rounded-md shadow-sm" aria-label="breadcrumb">
     <ol class="breadcrumb-list flex flex-wrap space-x-2 items-center">
         @foreach ($items as $item)
             <li class="flex items-center">
